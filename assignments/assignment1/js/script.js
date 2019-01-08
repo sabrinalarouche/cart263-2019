@@ -29,8 +29,8 @@ let food = {
   x: 0,
   y: 0,
   //give food velocity and speed variables
-  vx: 0,
-  vy: 0,
+  vx: 5,
+  vy: 5,
   maxSpeed: 5,
   size: 64,
   color: '#55cccc'
@@ -53,6 +53,10 @@ function setup() {
   createCanvas(windowWidth,windowHeight);
   positionFood();
   noCursor();
+  setInterval(function(){
+    food.vx = random(-5,5);
+    food.vy = random(-5,5);
+  }, 1000);
 }
 
 
@@ -71,6 +75,7 @@ function draw() {
   // Otherwise we handle the game
   background(0);
   updateAvatar();
+  updateFood();
   checkCollision();
   displayAvatar();
   displayFood();
@@ -137,3 +142,22 @@ function positionFood() {
   food.x = random(0,width);
   food.y = random(0,height);
 }
+//move food function and wrap
+function updateFood() {
+  food.x += food.vx;
+  food.y += food.vy;
+//wrap screen
+  if (food.x < 0) {
+      food.x += width;
+    }
+    else if (food.x > width) {
+      food.x -= width;
+    }
+
+    if (food.y < 0) {
+      food.y += height;
+    }
+    else if (food.y > height) {
+      food.y -= height;
+    }
+  }
