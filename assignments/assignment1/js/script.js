@@ -28,6 +28,10 @@ let avatar = {
 let food = {
   x: 0,
   y: 0,
+  //give food velocity and speed variables
+  vx: 0,
+  vy: 0,
+  maxSpeed: 5,
   size: 64,
   color: '#55cccc'
 }
