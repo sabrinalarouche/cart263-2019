@@ -20,7 +20,7 @@ class Avatar extends Agent {
   // Add the size of the other agent to this one, and resets the other agent
   eat(other) {
     // Only eat if you're active
-    if (!avatar.active) {
+    if (!this.active) {
       return;
     }
 
