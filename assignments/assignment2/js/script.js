@@ -3,12 +3,7 @@
 /*****************
 
 OOP Circle Eater
-Pippin Barr
-
-An Object-Oriented version of the Circle Eater program.
-The player moves a circle around with the mouse.
-Another circle represents food which the player eats by overlapping.
-The player circle shrinks over time, but grows when it eats.
+Sabrina Larouche
 
 ******************/
 
@@ -39,7 +34,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth,windowHeight);
   avatar = new Avatar(mouseX,mouseY,AVATAR_MAX_SIZE,AVATAR_SIZE_LOSS_PER_FRAME)
-  food = new Food(random(0,width),random(0,height),FOOD_MIN_SIZE,FOOD_MAX_SIZE);
+  food = new Food(random(0,width),random(0,height),5,5,FOOD_MIN_SIZE,FOOD_MAX_SIZE);
   noCursor();
 }
 
@@ -59,4 +54,5 @@ function draw() {
   }
   avatar.display();
   food.display();
+  food.update();
 }
