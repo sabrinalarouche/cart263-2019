@@ -31,7 +31,6 @@ function setup() {
   $spans.on('click',spanClicked);
   // Set an interval of 500 milliseconds to update the state of the page
   $secrets.on('mouseover',found);
-  //$secrets.off('mouseout',found);
   setInterval(update,500);
 };
 
