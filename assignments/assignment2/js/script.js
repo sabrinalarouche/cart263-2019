@@ -15,8 +15,6 @@ const FOOD_MAX_SIZE = 100;
 
 // Variables to store the two key objects
 let agents = [];
-
-
 // preload()
 //
 // Not needed
@@ -33,7 +31,9 @@ function preload() {
 function setup() {
   createCanvas(windowWidth,windowHeight);
   agents.push(new Avatar(mouseX,mouseY,AVATAR_MAX_SIZE,AVATAR_SIZE_LOSS_PER_FRAME));
-  agents.push(new Food(random(0,width),random(0,height),5,5,FOOD_MIN_SIZE,FOOD_MAX_SIZE));
+  for (let i = 0; i < 15; i++){
+  agents.push(new Food(random(0,width),random(0,height),random(2,5),random(2,5),FOOD_MIN_SIZE,FOOD_MAX_SIZE));
+  }
   noCursor();
 }
 
@@ -51,8 +51,11 @@ function draw() {
       agents[i].display();
     }
 
-  if (agents[0].collide(agents[1])) {
-    agents[0].eat(agents[1]);
+      for (let i = 1; i < agents.length; i++) {
+
+  if (agents[0].collide(agents[i])) {
+    agents[0].eat(agents[i]);
   }
+}
 
 }

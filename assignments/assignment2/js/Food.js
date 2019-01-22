@@ -16,6 +16,7 @@ class Food extends Agent {
     this.vy = vy;
     this.minSize = minSize;
     this.maxSize = maxSize;
+    this.t = random(0, 100);
   }
 
   // reset()
@@ -30,8 +31,9 @@ class Food extends Agent {
 
   update() {
 //move
-  this.x += this.vx;
+  this.x += this.vx*map(noise(this.t), 0,1,-1,1);
   this.y += this.vy;
+  this.t += 0.01;
 //wrap screen
   if (this.x < 0) {
       this.x += width;
