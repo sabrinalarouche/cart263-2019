@@ -16,5 +16,6 @@ $(document).ready(setup);
 function setup() {
 fork = $('#fork');
 mouth = $('#mouth');
+//fork moves with draggable
 fork.draggable();
 }

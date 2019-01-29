@@ -10,3 +10,27 @@ body {
   padding: 0;
   margin: 0;
 }
+/* mouth in upper left corner */
+#mouth {
+  width:40%;
+  height:50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+}
+/* fork attributes */
+#fork {
+  width: 30%;
+  height: 30%;
+  z-index: 999;
+
+}
+/* bowl in bottom left corner*/
+#bowl {
+position: absolute;
+width: 40%;
+height: 40%;
+bottom: 0;
+left: 0;
+}
