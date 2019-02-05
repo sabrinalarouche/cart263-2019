@@ -50,7 +50,6 @@ body {
   cursor: pointer;
 }
 /* meatball on fork in bottom left corner on top of spaghetti */
-#meatball {
 #revealed {
   width: 30%;
   height: auto;
