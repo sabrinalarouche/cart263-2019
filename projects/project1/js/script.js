@@ -2,18 +2,14 @@
 
 /*****************
 
-Title of Project
+Meat Me Halfway
 Sabrina Larouche
-
-This is a template. You must fill in the title,
-author, and this description to match your project!
 
 Sources:
 Fork image: https://vector.me/browse/352861/fork
 Meatball image: https://pixy.org/1176356/
 Mouth image: https://pngtree.com/freepng/cartoon-open-ones-mouth-illustration_3509559.html
 Bowl image: https://www.kissclipart.com/pasta-png-clipart-spaghetti-with-meatballs-pasta-i-oxjscd/
-Audio: http://www.pacdv.com/sounds/
 
 ******************/
 //Variables

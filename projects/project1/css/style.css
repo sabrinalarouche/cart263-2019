@@ -17,6 +17,8 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  /* cursor changes when over the mouth*/
+  cursor: pointer;
 }
 /* fork attributes */
 #fork {
@@ -44,9 +46,11 @@ body {
   margin-bottom: 15%;
 /* positioned above everything*/
   z-index: 999;
+/* cursor changes when over the meatball*/
   cursor: pointer;
 }
-
+/* meatball on fork in bottom left corner on top of spaghetti */
+#meatball {
 #revealed {
   width: 30%;
   height: auto;
