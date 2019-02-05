@@ -19,6 +19,7 @@ Audio: http://www.pacdv.com/sounds/
 let fork;
 let mouth;
 let meatball;
+let revealed;
 
 $(document).ready(setup);
 
@@ -33,13 +34,27 @@ function setup() {
     // The drop option specifies a function to call when a drop is completed
     drop: meatballDropped
   });
+  mouth.droppable({
+    drop: mouthDropped
+  });
 
 }
 
 function meatballDropped (event,ui) {
-  ui.draggable.remove(); // $fly.remove() would work here too
+  //ui.draggable.remove(); // $fly.remove() would work here too
+  ui.draggable.hide();
   $(this).attr('src','assets/images/combo.png');
   $(this).attr('id','revealed');
   $(this).draggable();
+  $(this).css({
+    top:"30%",
+    left:0
+  });
 
+}
+function mouthDropped (event,ui) {
+  ui.draggable.hide(); // $fly.remove() would work here too
+  //fork.parent().append('<img id="fork" src="assets/images/fork.png">')
+  fork.show();
+  fork.css({top:0, left:0});
 }
