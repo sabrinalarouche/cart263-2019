@@ -94,6 +94,6 @@ function mouthDropped (event,ui) {
   meatball.draggable('destroy');
 //reloading the original droppable meatball
   meatball.droppable({
-    drop: meatballDropped;
+    drop: meatballDropped
   });
 }
