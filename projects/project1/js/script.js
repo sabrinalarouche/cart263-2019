@@ -57,4 +57,18 @@ function mouthDropped (event,ui) {
   //fork.parent().append('<img id="fork" src="assets/images/fork.png">')
   fork.show();
   fork.css({top:0, left:0});
+  meatball.attr('src','assets/images/meatball.png');
+  meatball.attr('id','meatball');
+  meatball.css({top:35, right:35});
+  meatball.show();
+  meatball.animate({
+    top:"55%",
+    left:0
+  },2500);
+  console.log(meatball.css("bottom"));
+  meatball.draggable('destroy');
+  meatball.droppable({
+    // The drop option specifies a function to call when a drop is completed
+    drop: meatballDropped
+  });
 }
