@@ -1,4 +1,5 @@
 Artist's Statement
+
 Sabrina Larouche
 
 When I have been tasked with creating something, either a poster, brochure, website or game, I am quite flexible as an artist and don’t stick to only one particular style. As someone who has studied in the field of graphic design, I have learned that the style of the creation you made often reflects the client’s vision and must appeal to the targeted audience. When straying away from these restraints, I often enjoy exploring different styles and concepts that are fun, creative or even odd. I enjoy having this creative freedom since I hadn’t had the opportunity in past courses and this project is one that allowed this for me.
