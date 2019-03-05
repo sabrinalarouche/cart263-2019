@@ -35,6 +35,7 @@ function setup() {
   rightDoor = $('#rightDoor');
 
   leftDoor.on("click", function(){
+  rightDoor.off("click");
   let r = Math.random();
   if (r > .5)
   {
@@ -45,7 +46,9 @@ function setup() {
   }
   });
 
+
   rightDoor.on("click", function(){
+  leftDoor.off("click");
   let r = Math.random();
     if (r > .5)
     {
