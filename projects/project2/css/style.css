@@ -3,3 +3,13 @@
 This is the style file for this project.
 
 **********************************************/
+
+#rightDoor{
+  width: auto;
+  height: 400px;
+}
+
+#leftDoor{
+  width: auto;
+  height: 400px;
+}
