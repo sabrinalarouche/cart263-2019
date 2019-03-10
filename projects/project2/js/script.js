@@ -17,14 +17,26 @@ let bad = [
 "bad1.png",
 "bad2.png",
 "bad3.png",
-"bad4.png"
+"bad4.png",
+"bad5.png",
+"bad6.png",
+"bad7.png",
+"bad8.png",
+"bad9.png",
+"bad10.png"
 ];
 
 let good= [
 "good1.png",
 "good2.png",
 "good3.png",
-"good4.png"
+"good4.png",
+"good5.png",
+"good6.png",
+"good7.png",
+"good8.png",
+"good9.png",
+"good10.png"
 ];
 
 $(document).ready(setup);
