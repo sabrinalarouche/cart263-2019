@@ -13,6 +13,7 @@ author, and this description to match your project!
 let leftDoor;
 let rightDoor;
 let order;
+let background;
 //Array of bad images
 let bad = [
 "bad1.png",
@@ -64,10 +65,12 @@ $(document).ready(setup);
 function setup() {
   leftDoor = $('#leftDoor');
   rightDoor = $('#rightDoor');
+
   newRound();
 }
 
 function newRound(){
+  $('body').css('background-image','url(assets/images/wall.jpg)');
   leftDoor.attr('src','assets/images/' + door[Math.floor(Math.random() * door.length)]);
   //left door is clickable
   leftDoor.on("click", function(){
@@ -77,12 +80,13 @@ function newRound(){
   let r = Math.random();
   if (r > .5)
   {
+  $('body').css('background-image','url(assets/images/black.png)');
   leftDoor.attr('src','assets/images/bad/' + bad[Math.floor(Math.random() * bad.length)]);
   responsiveVoice.speak(badPhrase[Math.floor(Math.random() * badPhrase.length,"UK English Male")]);
   }
   else {
   leftDoor.attr('src','assets/images/good/' + good[Math.floor(Math.random() * good.length)]);
-    responsiveVoice.speak(goodPhrase[Math.floor(Math.random() * goodPhrase.length,"UK English Male")]);
+  responsiveVoice.speak(goodPhrase[Math.floor(Math.random() * goodPhrase.length,"UK English Male")]);
   }
   //once it is clicked once, can't be clicked again (when clicked after image appeared, image would change)
   leftDoor.off("click");
@@ -97,6 +101,7 @@ function newRound(){
   let r = Math.random();
     if (r > .5)
     {
+    $('body').css('background-image','url(assets/images/black.png)');    
     rightDoor.attr('src','assets/images/bad/' + bad[Math.floor(Math.random() * bad.length)]);
     responsiveVoice.speak(badPhrase[Math.floor(Math.random() * badPhrase.length,"UK English Male")]);
     }
