@@ -26,6 +26,12 @@ let bad = [
 "bad9.png",
 "bad10.png"
 ];
+
+let badPhrase= [
+  "drugs are good",
+  "skip school"
+];
+
 //Array of good images
 let good= [
 "good1.png",
@@ -39,6 +45,12 @@ let good= [
 "good9.png",
 "good10.png"
 ];
+
+let goodPhrase= [
+  "respect your parents",
+  "do your homework"
+]
+//Array of door images
 let door= [
 "door1.png",
 "door2.png",
@@ -66,9 +78,11 @@ function newRound(){
   if (r > .5)
   {
   leftDoor.attr('src','assets/images/bad/' + bad[Math.floor(Math.random() * bad.length)]);
+  responsiveVoice.speak(badPhrase[Math.floor(Math.random() * badPhrase.length,"UK English Male")]);
   }
   else {
   leftDoor.attr('src','assets/images/good/' + good[Math.floor(Math.random() * good.length)]);
+    responsiveVoice.speak(goodPhrase[Math.floor(Math.random() * goodPhrase.length,"UK English Male")]);
   }
   //once it is clicked once, can't be clicked again (when clicked after image appeared, image would change)
   leftDoor.off("click");
@@ -84,9 +98,11 @@ function newRound(){
     if (r > .5)
     {
     rightDoor.attr('src','assets/images/bad/' + bad[Math.floor(Math.random() * bad.length)]);
+    responsiveVoice.speak(badPhrase[Math.floor(Math.random() * badPhrase.length,"UK English Male")]);
     }
     else {
     rightDoor.attr('src','assets/images/good/' + good[Math.floor(Math.random() * good.length)]);
+    responsiveVoice.speak(goodPhrase[Math.floor(Math.random() * goodPhrase.length,"UK English Male")]);
     }
   //once it is clicked once, can't be clicked again (when clicked after image appeared, image would change)
     rightDoor.off("click");
