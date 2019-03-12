@@ -39,14 +39,24 @@ let good= [
 "good9.png",
 "good10.png"
 ];
-
+let door= [
+"door1.png",
+"door2.png",
+"door3.png",
+"door4.png",
+"door5.png",
+"door6.png"
+];
 $(document).ready(setup);
 
 function setup() {
-
   leftDoor = $('#leftDoor');
   rightDoor = $('#rightDoor');
+  newRound();
+}
 
+function newRound(){
+  leftDoor.attr('src','assets/images/' + door[Math.floor(Math.random() * door.length)]);
   //left door is clickable
   leftDoor.on("click", function(){
   //When left door is click, it changes to an image and right door can't be clicked
@@ -62,7 +72,9 @@ function setup() {
   }
   //once it is clicked once, can't be clicked again (when clicked after image appeared, image would change)
   leftDoor.off("click");
-  });
+  setTimeout(newRound, 5000);
+});
+  rightDoor.attr('src','assets/images/' + door[Math.floor(Math.random() * door.length)]);
   //right door clickable
   rightDoor.on("click", function(){
 //When right door is click, it changes to an image and left door can't be clicked
@@ -78,5 +90,7 @@ function setup() {
     }
   //once it is clicked once, can't be clicked again (when clicked after image appeared, image would change)
     rightDoor.off("click");
+    setTimeout(newRound, 5000);
   });
+
 }
