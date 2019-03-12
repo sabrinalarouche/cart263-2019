@@ -13,6 +13,7 @@ author, and this description to match your project!
 let leftDoor;
 let rightDoor;
 let order;
+//Array of bad images
 let bad = [
 "bad1.png",
 "bad2.png",
@@ -25,7 +26,7 @@ let bad = [
 "bad9.png",
 "bad10.png"
 ];
-
+//Array of good images
 let good= [
 "good1.png",
 "good2.png",
@@ -46,8 +47,11 @@ function setup() {
   leftDoor = $('#leftDoor');
   rightDoor = $('#rightDoor');
 
+  //left door is clickable
   leftDoor.on("click", function(){
+  //When left door is click, it changes to an image and right door can't be clicked
   rightDoor.off("click");
+  //at random, the image will either be good or bad.
   let r = Math.random();
   if (r > .5)
   {
@@ -56,11 +60,14 @@ function setup() {
   else {
   leftDoor.attr('src','assets/images/good/' + good[Math.floor(Math.random() * good.length)]);
   }
-  });
-
-
-  rightDoor.on("click", function(){
+  //once it is clicked once, can't be clicked again
   leftDoor.off("click");
+  });
+  //right door clickable
+  rightDoor.on("click", function(){
+//When left door is click, it changes to an image and right door can't be clicked
+  leftDoor.off("click");
+  //at random, the image will either be good or bad.
   let r = Math.random();
     if (r > .5)
     {
@@ -69,5 +76,7 @@ function setup() {
     else {
     rightDoor.attr('src','assets/images/good/' + good[Math.floor(Math.random() * good.length)]);
     }
+  //once it is clicked once, can't be clicked again
+    rightDoor.off("click");
   });
 }
