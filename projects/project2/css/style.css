@@ -6,18 +6,19 @@ This is the style file for this project.
 
 #rightDoor{
   width: auto;
-  height: 600px;
+  height: 70%;
   position: absolute;
   margin-left: 20%;
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 #leftDoor{
   width: auto;
-  height: 600px;
+  height: 70%;
   position: absolute;
   padding-left: 55%;
   padding-right: 10%;
-  padding-top: 10%;
+  padding-top: 5%;
+
 
 }
