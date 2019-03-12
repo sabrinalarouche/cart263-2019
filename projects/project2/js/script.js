@@ -127,7 +127,7 @@ function newRound(){
       // or a good image with a good phrase and good background selected from array
       $('body').css('background-image','url(assets/images/goodBackground/' + goodBackground[Math.floor(Math.random() * goodBackground.length)]+')');
       leftDoor.attr('src','assets/images/good/' + good[Math.floor(Math.random() * good.length)]);
-      responsiveVoice.speak(goodPhrase[Math.floor(Math.random() * goodPhrase.length)],"US English Female", {pitch: 1.5});
+      responsiveVoice.speak(goodPhrase[Math.floor(Math.random() * goodPhrase.length)],"US English Female", {pitch: 1.5, rate: 1});
     }
     //once it is clicked once, can't be clicked again (when clicked after image appeared, image would change)
     leftDoor.off("click");
@@ -156,7 +156,7 @@ function newRound(){
     else {
       $('body').css('background-image','url(assets/images/goodBackground/' + goodBackground[Math.floor(Math.random() * goodBackground.length)]+')');
       rightDoor.attr('src','assets/images/good/' + good[Math.floor(Math.random() * good.length)]);
-      responsiveVoice.speak(goodPhrase[Math.floor(Math.random() * goodPhrase.length)],"US English Female",{pitch: 1.5});
+      responsiveVoice.speak(goodPhrase[Math.floor(Math.random() * goodPhrase.length)],"US English Female",{pitch: 1.5, rate:1});
     }
     //once it is clicked once, can't be clicked again (when clicked after image appeared, image would change)
     rightDoor.off("click");
