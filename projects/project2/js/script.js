@@ -60,12 +60,12 @@ function setup() {
   else {
   leftDoor.attr('src','assets/images/good/' + good[Math.floor(Math.random() * good.length)]);
   }
-  //once it is clicked once, can't be clicked again
+  //once it is clicked once, can't be clicked again (when clicked after image appeared, image would change)
   leftDoor.off("click");
   });
   //right door clickable
   rightDoor.on("click", function(){
-//When left door is click, it changes to an image and right door can't be clicked
+//When right door is click, it changes to an image and left door can't be clicked
   leftDoor.off("click");
   //at random, the image will either be good or bad.
   let r = Math.random();
@@ -76,7 +76,7 @@ function setup() {
     else {
     rightDoor.attr('src','assets/images/good/' + good[Math.floor(Math.random() * good.length)]);
     }
-  //once it is clicked once, can't be clicked again
+  //once it is clicked once, can't be clicked again (when clicked after image appeared, image would change)
     rightDoor.off("click");
   });
 }
