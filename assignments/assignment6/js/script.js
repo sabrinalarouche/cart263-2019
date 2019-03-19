@@ -49,17 +49,24 @@ function gotData(data) {
     verb = 'are';
   }
 
+
   // Now the cat
   let cat = getRandomElement(data.cats);
 
   // Same again for room
   let room = getRandomElement(data.rooms);
 
+  let article = 'a';
+  if (vowels.indexOf(room.charAt(0)) !== -1) {
+    // If so, assume it's plural (this is a flawed assumption)
+    article = 'an';
+  }
+
   let sausage = getRandomElement(data.sausages);
   // Now we can construct our description with a template string
   // We have the basic structure of a sentence and we substitute in the
   // values we've just calculated
-  let description = `${sausage} with ${condiment} ${verb} like a ${cat} in a ${room}.`;
+  let description = `${sausage} with ${condiment} ${verb} like a ${cat} in ${article} ${room}.`;
 
   // Finally, we add it to the page and hey presto!
   $('body').append(description)
