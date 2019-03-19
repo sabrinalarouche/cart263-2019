@@ -26,7 +26,9 @@ $(document).ready(function() {
   // For that we use jQuery's .getJSON() function, which we give
   // the location of the file, and a function to call when the data
   // is available...
+  $(document).on('click',function(){
   $.getJSON('data/data.json', gotData);
+});
 });
 
 // gotData (data)
@@ -34,6 +36,7 @@ $(document).ready(function() {
 // This function gets called by getJSON when the data has been loaded.
 // The data itself will be in the 'data' argument as a JavaScript object.
 function gotData(data) {
+  $('body').empty();
   // Now we select random elements from the three arrays inside
   // our JSON to get a random condiment, cat, and room. Then we add those
   // words onto our page by setting the text of the appropriate span.
@@ -63,6 +66,8 @@ function gotData(data) {
   }
 
   let sausage = getRandomElement(data.sausages);
+  sausage = sausage.charAt(0).toUpperCase() + sausage.slice(1);
+
   // Now we can construct our description with a template string
   // We have the basic structure of a sentence and we substitute in the
   // values we've just calculated
