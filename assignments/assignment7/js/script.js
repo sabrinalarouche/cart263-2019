@@ -42,12 +42,14 @@ let pattern = ['x','*','xo*',' ','x','x','xo','*'];
 let patternIndex = 0;
 
 let mouseOnce = true;
-
+let bg;
 // setup()
 //
 // Creat canvas, set up the synth and sound files.
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  noCanvas();
+//createCanvas(windowWidth,windowHeight);
+  bg = createImg('../assets/images/cat.gif');
 
   // Create the synth
   synth = new Pizzicato.Sound({
@@ -101,6 +103,10 @@ var ringModulator = new Pizzicato.Effects.RingModulator({
 
 
 drum.addEffect(ringModulator);
+}
+
+function draw(){
+    bg.position(0,0);
 }
 
 // mousePressed
