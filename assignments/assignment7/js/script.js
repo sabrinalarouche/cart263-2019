@@ -40,6 +40,8 @@ let pattern = ['x','*','xo*',' ','x','x','xo','*'];
 // Which beat of the pattern we're at right now
 let patternIndex = 0;
 
+let mouseOnce = true;
+
 // setup()
 //
 // Creat canvas, set up the synth and sound files.
@@ -85,11 +87,15 @@ function setup() {
 // Using this to start the note and drum sequences to get around
 // user interaction (and to give the files time to load)
 function mousePressed() {
+  if (mouseOnce === true){
   // Start an interval for the notes
   setInterval(playNote,NOTE_TEMPO);
   // Start an interval for the drums
   setInterval(playDrum,DRUM_TEMPO);
+  mouseOnce = false;
 }
+}
+
 
 // playNote
 //
