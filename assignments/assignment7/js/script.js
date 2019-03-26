@@ -26,6 +26,7 @@ const RELEASE = 0.1;
 let frequencies = [
   220,246.94,277.18,293.66,329.63,369.99,415.30
 ];
+
 // The synth
 let synth;
 // The sound files
@@ -57,7 +58,17 @@ function setup() {
       release: RELEASE,
       frequency: 220
     }
+
   });
+
+  var tremolo = new Pizzicato.Effects.Tremolo({
+    speed: 7,
+    depth: 0.8,
+    mix: 0.8
+});
+
+
+  synth.addEffect(tremolo);
 
   // Load the three drum sounds as wav files
   kick = new Pizzicato.Sound({
@@ -80,6 +91,16 @@ function setup() {
       path: 'assets/sounds/hihat.wav'
     }
   });
+
+var drum = new Pizzicato.Group([kick, snare, hihat]);
+var ringModulator = new Pizzicato.Effects.RingModulator({
+    speed: 30,
+    distortion: 1,
+    mix: 0.5
+});
+
+
+drum.addEffect(ringModulator);
 }
 
 // mousePressed
@@ -89,14 +110,20 @@ function setup() {
 function mousePressed() {
   if (mouseOnce === true){
   // Start an interval for the notes
-  setInterval(playNote,NOTE_TEMPO);
+  //setInterval(playNote,NOTE_TEMPO);
+  playSynth();
   // Start an interval for the drums
   setInterval(playDrum,DRUM_TEMPO);
   mouseOnce = false;
 }
 }
 
-
+function playSynth(){
+  let duration = Math.ceil(Math.random() * 5) * NOTE_TEMPO;
+  console.log(duration);
+  setTimeout(playSynth,duration);
+  playNote();
+}
 // playNote
 //
 // Chooses a random frequency and assigns it to the synth
@@ -107,7 +134,7 @@ function playNote() {
   synth.frequency = frequency;
   // If it's note already play, play the synth
   let synthSkip = Math.random();
-  if (synthSkip > 0.5){
+  if (synthSkip > 0.2){
   synth.play();
 }
   else {
