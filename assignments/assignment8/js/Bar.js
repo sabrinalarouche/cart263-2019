@@ -14,7 +14,7 @@ progress(){
   rect(this.x-this.lengthX/2,this.y+150,this.loading,this.lengthY);
 
 if(this.loading < this.lengthX ){
-  this.loading += 1;
+  this.loading += 100;
 }
 else{
   state = "START";

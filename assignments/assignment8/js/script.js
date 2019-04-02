@@ -19,10 +19,8 @@ let globe;
 let boxes = [];
 let state = "LOADING"
 let cursor;
-let cursorX;
-let cursorY;
-let x= 0;
-let y= 0;
+let cursorX = 0;
+let cursorY = 0;
 function preload() {
 }
 
@@ -87,11 +85,12 @@ bar.progress();
 
 function displayStart(){
 boxes[0].display();
+fakeCursor();
 }
 
 function fakeCursor(){
 
-cursor = lerp(x,y,mouseX,mouseY, 0.05);
-cursor = lerp(y, mouseY, 0.05);
-
+cursorX = lerp(cursorX,mouseX, 0.03);
+cursorY = lerp(cursorY,mouseY, 0.03);
+image(cursor,cursorX,cursorY);
 }
