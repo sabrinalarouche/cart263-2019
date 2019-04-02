@@ -34,12 +34,12 @@ createCanvas(windowWidth,windowHeight);
 //globe = createImg('../assets/images/globe.png');
 globe = new Globe(windowWidth/2,windowHeight/2);
 bar = new Bar(windowWidth/2,windowHeight/2);
-boxes.push(new Box(0,0,500,500))
-boxes.push(new Box(502,0,500,500))
-boxes.push(new Box(1002,0,500,500))
-boxes.push(new Box(0,502,500,500))
-boxes.push(new Box(502,502,500,500))
-boxes.push(new Box(1002,502,500,500))
+boxes.push(new Box(0,50,350,350))
+boxes.push(new Box(450,50,350,350))
+boxes.push(new Box(850,50,350,350))
+boxes.push(new Box(0,450,350,350))
+boxes.push(new Box(450,450,350,350))
+boxes.push(new Box(850,450,350,350))
 imageMode(CENTER);
 cursor = loadImage('../assets/images/cursor.png');
 }
@@ -71,21 +71,6 @@ function displayLoading(){
 globe.display();
 globe.move();
 bar.progress();
-/* function move() {
-  let elem = document.getElementById("myBar");
-  let width = 1;
-  let id = setInterval(frame, 10);
-
-  function frame() {
-    if (width >= 100) {
-      clearInterval(id);
-    } else {
-      width++;
-      elem.style.width = width + '%';
-    }
-  }
-}
-*/
 }
 
 function displayStart(){
