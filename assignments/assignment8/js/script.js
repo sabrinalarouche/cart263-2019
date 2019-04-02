@@ -35,6 +35,11 @@ createCanvas(windowWidth,windowHeight);
 globe = new Globe(windowWidth/2,windowHeight/2);
 bar = new Bar(windowWidth/2,windowHeight/2);
 boxes.push(new Box(0,0,500,500))
+boxes.push(new Box(502,0,500,500))
+boxes.push(new Box(1002,0,500,500))
+boxes.push(new Box(0,502,500,500))
+boxes.push(new Box(502,502,500,500))
+boxes.push(new Box(1002,502,500,500))
 imageMode(CENTER);
 cursor = loadImage('../assets/images/cursor.png');
 }
@@ -84,12 +89,13 @@ bar.progress();
 }
 
 function displayStart(){
-boxes[0].display();
+for(let i = 0; i < boxes.length; i ++){
+  boxes[i].display();
+}
 fakeCursor();
 }
 
 function fakeCursor(){
-
 cursorX = lerp(cursorX,mouseX, 0.03);
 cursorY = lerp(cursorY,mouseY, 0.03);
 image(cursor,cursorX,cursorY);
