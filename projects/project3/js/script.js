@@ -21,6 +21,7 @@ let state = "LOADING"
 let cursor;
 let cursorX = 0;
 let cursorY = 0;
+let logos = [];
 function preload() {
 }
 
@@ -31,15 +32,23 @@ function preload() {
 
 function setup() {
 createCanvas(windowWidth,windowHeight);
-//globe = createImg('../assets/images/globe.png');
+
 globe = new Globe(windowWidth/2,windowHeight/2);
 bar = new Bar(windowWidth/2,windowHeight/2);
-boxes.push(new Box(0,50,350,350))
-boxes.push(new Box(450,50,350,350))
-boxes.push(new Box(850,50,350,350))
-boxes.push(new Box(0,450,350,350))
-boxes.push(new Box(450,450,350,350))
-boxes.push(new Box(850,450,350,350))
+
+logos.push(loadImage("../assets/images/logos/logo1.jpg"));
+logos.push(loadImage("../assets/images/logos/logo2.jpg"));
+logos.push(loadImage("../assets/images/logos/logo3.png"));
+logos.push(loadImage("../assets/images/logos/logo4.png"));
+logos.push(loadImage("../assets/images/logos/logo5.png"));
+logos.push(loadImage("../assets/images/logos/logo6.jpg"));
+
+boxes.push(new Box(100,50,350,350,logos[0]));
+boxes.push(new Box(525,50,350,350,logos[1]));
+boxes.push(new Box(950,50,350,350,logos[2]));
+boxes.push(new Box(100,450,350,350,logos[3]));
+boxes.push(new Box(525,450,350,350,logos[4]));
+boxes.push(new Box(950,450,350,350,logos[5]));
 imageMode(CENTER);
 cursor = loadImage('../assets/images/cursor.png');
 }
