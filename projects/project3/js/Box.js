@@ -1,5 +1,5 @@
 class Box {
-  constructor(x,y,width,height,logo) {
+  constructor(x,y,width,height,logo,url) {
     this.x = x;
     this.y = y;
     this.width = width;
@@ -8,6 +8,7 @@ class Box {
     this.tint = color(255);
     this.amount = nf(random(14,100)/5,1,2);
     this.text = 'To Access: ' +this.amount +'$';
+    this.url = url;
   }
 
   display(){
@@ -15,7 +16,6 @@ class Box {
     tint(this.tint);
     image(this.logo,this.x,this.y,this.width,this.height);
     this.overlap();
-    //  rect(this.x,this.y,this.width,this.height);
   }
 
   overlap(){
@@ -25,20 +25,36 @@ class Box {
       textAlign(CENTER);
       textSize(25);
       text(this.text,this.x + this.width/2, this.y + this.height/2);
-      if(mouseIsPressed){
-        this.clicked();
-      }
+      //if(mouseIsPressed){
+      //  this.clicked();
+      //}
     }
     else {
       this.tint = color(255);
     }
   }
   clicked(){
-    if (initialBalance - this.amount > 0){
-      initialBalance -= this.amount;
-    }
-    else {
-      alert("Error: Out of Funds");
+    if(cursorX > this.x && cursorX < this.x + this.width && cursorY > this.y && cursorY < this.y + this.height ){
+      if (initialBalance - this.amount > 0){
+        initialBalance -= this.amount;
+      let scenario = floor(random(0,4));
+      if (scenario == 0){
+      window.location.href = this.url;
+      }
+      else if(scenario ==1){
+      state = "INFINITYLOADING";
+      }
+      else if(scenario == 2){
+        alert("Error: Page can't be accessed");
+      }
+      else if(scenario ==3){
+
+      }
+      }
+      else {
+        alert("Error: Out of Funds.");
+
+      }
     }
   }
 }

@@ -32,26 +32,26 @@ function preload() {
 // Description of setup
 
 function setup() {
-createCanvas(windowWidth,windowHeight);
+  createCanvas(windowWidth,windowHeight);
 
-globe = new Globe(windowWidth/2,windowHeight/2);
-bar = new Bar(windowWidth/2,windowHeight/2);
+  globe = new Globe(windowWidth/2,windowHeight/2);
+  bar = new Bar(windowWidth/2,windowHeight/2);
 
-logos.push(loadImage("../assets/images/logos/logo1.png"));
-logos.push(loadImage("../assets/images/logos/logo2.png"));
-logos.push(loadImage("../assets/images/logos/logo3.png"));
-logos.push(loadImage("../assets/images/logos/logo4.png"));
-logos.push(loadImage("../assets/images/logos/logo5.png"));
-logos.push(loadImage("../assets/images/logos/logo6.png"));
+  logos.push(loadImage("../assets/images/logos/logo1.png"));
+  logos.push(loadImage("../assets/images/logos/logo2.png"));
+  logos.push(loadImage("../assets/images/logos/logo3.png"));
+  logos.push(loadImage("../assets/images/logos/logo4.png"));
+  logos.push(loadImage("../assets/images/logos/logo5.png"));
+  logos.push(loadImage("../assets/images/logos/logo6.png"));
 
-boxes.push(new Box(100,50,350,350,logos[0]));
-boxes.push(new Box(525,50,350,350,logos[1]));
-boxes.push(new Box(950,50,350,350,logos[2]));
-boxes.push(new Box(100,450,350,350,logos[3]));
-boxes.push(new Box(525,450,350,350,logos[4]));
-boxes.push(new Box(950,450,350,350,logos[5]));
-imageMode(CENTER);
-cursor = loadImage('../assets/images/cursor.png');
+  boxes.push(new Box(100,50,350,350,logos[0],'https://www.netflix.com/ca/'));
+  boxes.push(new Box(525,50,350,350,logos[1],'https://www.instagram.com/'));
+  boxes.push(new Box(950,50,350,350,logos[2],'https://www.facebook.com/'));
+  boxes.push(new Box(100,450,350,350,logos[3],'https://www.youtube.com/'));
+  boxes.push(new Box(525,450,350,350,logos[4],'https://www.google.com/maps'));
+  boxes.push(new Box(950,450,350,350,logos[5],'https://www.google.com/'));
+  imageMode(CENTER);
+  cursor = loadImage('../assets/images/cursor.png');
 }
 
 
@@ -60,9 +60,9 @@ cursor = loadImage('../assets/images/cursor.png');
 // Description of draw()
 
 function draw() {
-noCursor();
-background(0);
-switch (state) {
+  noCursor();
+  background(0);
+  switch (state) {
     case "LOADING":
     {
       displayLoading();
@@ -74,32 +74,46 @@ switch (state) {
       displayStart();
       break;
     }
+
+    case "INFINITYLOADING":
+    {
+      imageMode(CENTER);
+      displayLoading();
+      break;
+    }
   }
+  noCursor();
 }
 
 function displayLoading(){
-globe.display();
-globe.move();
-bar.progress();
+  globe.display();
+  globe.move();
+  bar.progress();
 }
 
 function displayStart(){
-push();
-fill(255,0,0);
-textAlign(CENTER);
-textSize(25);
-text('Account Balance: ' + nf(initialBalance,1,2) +'$',200,50);
-pop();
+  push();
+  fill(255,0,0);
+  textAlign(CENTER);
+  textSize(25);
+  text('Account Balance: ' + nf(initialBalance,1,2) +'$',200,50);
+  pop();
 
-for(let i = 0; i < boxes.length; i ++){
-  boxes[i].display();
-}
+  for(let i = 0; i < boxes.length; i ++){
+    boxes[i].display();
+  }
 
-fakeCursor();
+  fakeCursor();
 }
 
 function fakeCursor(){
-cursorX = lerp(cursorX,mouseX, 0.03);
-cursorY = lerp(cursorY,mouseY, 0.03);
-image(cursor,cursorX,cursorY);
+  cursorX = lerp(cursorX,mouseX, 0.03);
+  cursorY = lerp(cursorY,mouseY, 0.03);
+  image(cursor,cursorX,cursorY);
+}
+
+function mouseClicked(){
+  for(let i = 0; i < boxes.length; i ++){
+    boxes[i].clicked();
+  }
 }

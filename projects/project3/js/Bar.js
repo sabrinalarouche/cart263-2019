@@ -17,7 +17,12 @@ if(this.loading < this.lengthX ){
   this.loading += 5;
 }
 else{
+if(state == "INFINITYLOADING"){
+  this.loading = 0;
+}
+else{
   state = "START";
+}
 }
 }
 }
