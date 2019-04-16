@@ -23,7 +23,7 @@ class Box {
       this.tint = color(255,100);
       fill(255);
       textAlign(CENTER);
-      textSize(windowWidth/50);
+      textSize(windowWidth/60);
       text(this.text,this.x + this.width/2, this.y + this.height/2);
 
     }
@@ -44,7 +44,7 @@ class Box {
       state = "INFINITYLOADING";
       }
       else if(scenario == 2){
-        alert("Error: Page can't be accessed");
+        alert("Error: Page can't be accessed. Try again later.");
       }
       else if(scenario ==3){
         state = "ARTICLE";

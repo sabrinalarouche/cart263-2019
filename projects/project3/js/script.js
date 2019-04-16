@@ -110,7 +110,7 @@ function draw() {
     push();
     fill(255,0,0);
     textAlign(CENTER);
-    textSize(windowWidth/40);
+    textSize(windowWidth/50);
     text('Account Balance: ' + nf(initialBalance,1,2) +'$',windowWidth/5,windowHeight/8);
     pop();
 
@@ -144,10 +144,9 @@ if(playing ===false){
 }
   fill(255);
   textAlign(LEFT);
-  textSize(18);
+  textSize(windowWidth/110);
   for(let i =0; i< article.article.length; i++){
-    text(article.article[i],width/5,height/3+(i*20));
-    console.log("text::"+ article.article[i]);
+    text(article.article[i],width/5,height/3+(i*30));
 }
 
 }
