@@ -22,6 +22,7 @@ let cursor;
 let cursorX = 0;
 let cursorY = 0;
 let logos = [];
+let initialBalance = 200;
 function preload() {
 }
 
@@ -36,12 +37,12 @@ createCanvas(windowWidth,windowHeight);
 globe = new Globe(windowWidth/2,windowHeight/2);
 bar = new Bar(windowWidth/2,windowHeight/2);
 
-logos.push(loadImage("../assets/images/logos/logo1.jpg"));
-logos.push(loadImage("../assets/images/logos/logo2.jpg"));
+logos.push(loadImage("../assets/images/logos/logo1.png"));
+logos.push(loadImage("../assets/images/logos/logo2.png"));
 logos.push(loadImage("../assets/images/logos/logo3.png"));
 logos.push(loadImage("../assets/images/logos/logo4.png"));
 logos.push(loadImage("../assets/images/logos/logo5.png"));
-logos.push(loadImage("../assets/images/logos/logo6.jpg"));
+logos.push(loadImage("../assets/images/logos/logo6.png"));
 
 boxes.push(new Box(100,50,350,350,logos[0]));
 boxes.push(new Box(525,50,350,350,logos[1]));
@@ -60,7 +61,7 @@ cursor = loadImage('../assets/images/cursor.png');
 
 function draw() {
 noCursor();
-background(255);
+background(0);
 switch (state) {
     case "LOADING":
     {
@@ -83,9 +84,17 @@ bar.progress();
 }
 
 function displayStart(){
+push();
+fill(255,0,0);
+textAlign(CENTER);
+textSize(25);
+text('Account Balance: ' + nf(initialBalance,1,2) +'$',200,50);
+pop();
+
 for(let i = 0; i < boxes.length; i ++){
   boxes[i].display();
 }
+
 fakeCursor();
 }
 
