@@ -23,18 +23,17 @@ class Box {
       this.tint = color(255,100);
       fill(255);
       textAlign(CENTER);
-      textSize(25);
+      textSize(windowWidth/50);
       text(this.text,this.x + this.width/2, this.y + this.height/2);
-      //if(mouseIsPressed){
-      //  this.clicked();
-      //}
+
     }
     else {
       this.tint = color(255);
     }
   }
   clicked(){
-    if(cursorX > this.x && cursorX < this.x + this.width && cursorY > this.y && cursorY < this.y + this.height ){
+      playing =false;
+      if(cursorX > this.x && cursorX < this.x + this.width && cursorY > this.y && cursorY < this.y + this.height ){
       if (initialBalance - this.amount > 0){
         initialBalance -= this.amount;
       let scenario = floor(random(0,4));
@@ -48,7 +47,7 @@ class Box {
         alert("Error: Page can't be accessed");
       }
       else if(scenario ==3){
-
+        state = "ARTICLE";
       }
       }
       else {
