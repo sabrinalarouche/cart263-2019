@@ -1,5 +1,6 @@
 class Globe {
   constructor(x,y) {
+  //Variables
     this.x = x;
     this.y = y;
     this.vy = -0.5;
@@ -10,12 +11,13 @@ class Globe {
   }
 
   display() {
+  //Globe is an image
       image(this.image,this.x,this.y);
     }
 
   move(){
+  //Move the globe image up and down
     this.y += this.vy;
-    console.log(this.y);
   if(this.y < this.originY - this.bounce){
     this.vy = -this.vy;
   }
