@@ -6,7 +6,7 @@ Net Unneutral World
 Sabrina Larouche
 
 This project is used to portray what our internet will look like if the net was no longer neutral.
-
+I did so through creating a slow loading page, glitches, and page with site links that have different outcomes at random.
 
 Sources:
 Images: Google Images
@@ -107,14 +107,14 @@ function draw() {
       displayStart();
       break;
     }
-    // Scenario 1 state, loading page that never goes anywhere
+    // Scenario == 1 state, loading page that never goes anywhere
     case "INFINITYLOADING":
     {
       imageMode(CENTER);
       displayLoading();
       break;
     }
-    //Scenario 3 state, random page that reads an article about Net Neutrality
+    //Scenario == 3 state, random page that reads an article about Net Neutrality
     case "ARTICLE":
     {
       displayArticle();
@@ -161,7 +161,7 @@ function mouseClicked(){
     boxes[i].clicked();
   }
 }
-//Displays the article for scenario 3
+//Displays the article for scenario ==3
 function displayArticle(){
   //Prepare the article for the responsiveVoice and activate responsiveVoice, only once
   if(playing ===false){
