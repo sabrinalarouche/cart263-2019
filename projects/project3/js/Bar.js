@@ -16,7 +16,7 @@ class Bar {
     rect(this.x-this.lengthX/2,this.y+150,this.loading,this.lengthY);
     //Have the red rectangle grow until it reaches the length of the white one
     if(this.loading < this.lengthX ){
-      this.loading += 5;
+      this.loading += 1;
     }
     else{
       //Scenario 1 laoding page that never goes anywhere and keeps loading over and over again

@@ -2,11 +2,16 @@
 
 /*****************
 
-Title of Project
-Author Name
+Net Unneutral World
+Sabrina Larouche
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
+This project is used to portray what our internet will look like if the net was no longer neutral.
+
+
+Sources:
+Images: Google Images
+Article: https://www.wired.com/story/guide-net-neutrality/
+"Tickle" code inspiration: https://p5js.org/examples/interaction-tickle.html
 
 ******************/
 //Variables
