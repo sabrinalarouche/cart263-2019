@@ -7,6 +7,7 @@ class Globe {
     this.originX = windowWidth/2;
     this.originY = windowHeight/2;
     this.bounce = 50;
+  // Added "project3" to path because online it would look at "projects/assets/.." and skipped project3 folder. 
     this.image = loadImage('../project3/assets/images/globe.png');
   }
 
