@@ -41,7 +41,7 @@ boxes.push(new Box(0,450,350,350))
 boxes.push(new Box(450,450,350,350))
 boxes.push(new Box(850,450,350,350))
 imageMode(CENTER);
-cursor = loadImage('../assets/images/cursor.png');
+cursor = loadImage('../assignment8/assets/images/cursor.png');
 }
 
 

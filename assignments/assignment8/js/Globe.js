@@ -6,7 +6,7 @@ class Globe {
     this.originX = windowWidth/2;
     this.originY = windowHeight/2;
     this.bounce = 50;
-    this.image = loadImage('../assets/images/globe.png');
+    this.image = loadImage('../assignment8/assets/images/globe.png');
   }
 
   display() {
