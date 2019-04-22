@@ -61,12 +61,12 @@ function setup() {
   bar = new Bar(windowWidth/2,windowHeight/2);
 
   //Put each logo's image into an array
-  logos.push(loadImage("../assets/images/logos/logo1.png"));
-  logos.push(loadImage("../assets/images/logos/logo2.png"));
-  logos.push(loadImage("../assets/images/logos/logo3.png"));
-  logos.push(loadImage("../assets/images/logos/logo4.png"));
-  logos.push(loadImage("../assets/images/logos/logo5.png"));
-  logos.push(loadImage("../assets/images/logos/logo6.png"));
+  logos.push(loadImage("../../project3/assets/images/logos/logo1.png"));
+  logos.push(loadImage("assets/images/logos/logo2.png"));
+  logos.push(loadImage("assets/images/logos/logo3.png"));
+  logos.push(loadImage("assets/images/logos/logo4.png"));
+  logos.push(loadImage("assets/images/logos/logo5.png"));
+  logos.push(loadImage("assets/images/logos/logo6.png"));
 
   //Create 6 boxes with different positions, same width/height, an image from logos array, and url associated with icon (for scenario 0)
   boxes.push(new Box(windowWidth/5,windowHeight/5,windowWidth/5,windowWidth/5,logos[0],'https://www.netflix.com/ca/'));
