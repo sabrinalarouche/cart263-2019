@@ -79,7 +79,7 @@ function setup() {
   imageMode(CENTER);
 
   //Image for fake cursor that follows behind real cursor
-  cursor = loadImage('../assets/images/cursor.png');
+  cursor = loadImage('../project3/assets/images/cursor.png');
 
   //Create line objects
   for(let i =0; i< article.article.length; i++){
