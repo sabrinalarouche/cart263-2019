@@ -61,7 +61,7 @@ function setup() {
   bar = new Bar(windowWidth/2,windowHeight/2);
 
   //Put each logo's image into an array
-  logos.push(loadImage("../../project3/assets/images/logos/logo1.png"));
+  logos.push(loadImage("../project3/assets/images/logos/logo1.png"));
   logos.push(loadImage("assets/images/logos/logo2.png"));
   logos.push(loadImage("assets/images/logos/logo3.png"));
   logos.push(loadImage("assets/images/logos/logo4.png"));
